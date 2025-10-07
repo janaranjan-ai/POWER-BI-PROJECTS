@@ -48,7 +48,7 @@ It includes KPIs, regional performance, category-wise sales breakdowns, and futu
 ## Dashboard Preview
 (Added a screenshot of  Power BI dashboard here)  
 Example:  
-![Sales Dashboard Preview](images/Overview.png)
+[![Sales Dashboard Preview](images/Overview.png)](https://github.com/janaranjan-ai/POWER-BI-PROJECTS/blob/main/SALES%20FORECAST%20REPORT/images/Overview.png)
 
 ---
 
