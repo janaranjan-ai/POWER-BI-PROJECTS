@@ -1,336 +1,200 @@
-&nbsp;Healthcare Waitlist Analytics Dashboard
-
-Power BI | Inpatient, Outpatient \& Day Case | Multi-Year Analysis
-
-&nbsp;Overview
-
-
+Healthcare Waitlist Analytics Dashboard
+Power BI | Inpatient, Outpatient & Day Case | Multi-Year Analysis
+📌Overview
 
 This project delivers a comprehensive Power BI dashboard that analyzes hospital waitlist data across Inpatient, Outpatient, and Day Case categories from 2018–2021.
 
-The report presents waitlist trends, specialty-level backlogs, time-band distributions, and demographic insights for healthcare decision-making.
+The report presents:
 
+Waitlist trends
 
+Specialty-level backlogs
 
-&nbsp;Key Features
+Time-band distributions
 
+Demographic insights
 
+designed to support healthcare decision-making.
+
+✨ Key Features
 
 Latest Month vs Previous Year Waitlist KPIs
 
 Case Type Bifurcation (Inpatient / Outpatient / Day Case)
 
-Age Profile \& Time Band Waitlist Analysis
+Age Profile & Time Band Waitlist Analysis
 
 Specialty-Level Backlog Comparison
 
-Multi-Year Trend Visualization
+Multi-Year Trend Visualizations
 
 Fully Filterable Detailed View
 
 Modern UI with drill-through capability
 
+🗂 Dataset Columns Used
+Column Name	Description
+Archive_Date	Snapshot date of the waitlist record
+Case_Type	Inpatient / Outpatient / Day Case
+Specialty_Name	Detailed clinical specialty
+Specialty_Group	Grouped clinical specialty (Bones, General, ENT, etc.)
+Age_Profile	0–15, 16–64, 65+
+Time_Bands	0–3, 3–6, 6–9, 9–12, 12–15, 15–18, 18+ Months
+Day Case	Count of Day Case patients
+Inpatient	Count of Inpatient patients
+Outpatient	Count of Outpatient patients
+Total	Combined patient count
+🧹 Data Preparation (Power Query)
 
+Cleaned date & text formats
 
-&nbsp;Dataset Columns Used
+Standardized case types
 
+Merged multi-year data
 
+Created Age Group & Time Band mappings
 
-The dashboard is built using the following key fields:
+Established relationship model
 
+📊 DAX Measures
 
-
-**Column Name	Description**
-
-Archive\_Date	Snapshot date of the waitlist record
-
-Case\_Type	Inpatient / Outpatient / Day Case
-
-Specialty\_Name	Detailed clinical specialty
-
-Specialty\_Group	Grouped clinical specialty (Bones, General, ENT, Eyes, etc.)
-
-Age\_Profile	0–15, 16–64, 65+
-
-Time\_Bands	0–3, 3–6, 6–9, 9–12, 12–15, 15–18, 18+ Months
-
-Day Case	Number of patients under Day Case
-
-Inpatient	Count of inpatient waitlisted patients
-
-Outpatient	Count of outpatient waitlisted patients
-
-Total	Sum of all patient categories
-
-&nbsp;Data Preparation
-
-
-
-Performed in Power Query:
-
-
-
-Cleaned date \& text formats
-
-
-
-Standardized Case Types
-
-
-
-Merged multiple years of data
-
-
-
-Created Age Group \& Time Band mappings
-
-
-
-Established relationship model for analysis
-
-
-
-&nbsp;DAX Measures
-
-
-
-Some core measures used:
-
-
+Latest Wait List
 
 Latest Wait List =
-
 CALCULATE(
-
-&nbsp;   SUM('Waitlist'\[Total]),
-
-&nbsp;   LASTDATE('Waitlist'\[Archive\_Date])
-
+    SUM('Waitlist'[Total]),
+    LASTDATE('Waitlist'[Archive_Date])
 )
 
 
+PY Latest Wait List
 
 PY Latest Wait List =
-
 CALCULATE(
-
-&nbsp;   SUM('Waitlist'\[Total]),
-
-&nbsp;   SAMEPERIODLASTYEAR('Waitlist'\[Archive\_Date])
-
+    SUM('Waitlist'[Total]),
+    SAMEPERIODLASTYEAR('Waitlist'[Archive_Date])
 )
 
 
+Avg Wait List
 
-Avg Wait List =
-
-AVERAGE('Waitlist'\[Total])
-
+Avg Wait List = AVERAGE('Waitlist'[Total])
 
 
-Total by Specialty Group =
+Total by Specialty Group
 
-SUM('Waitlist'\[Total])
+Total by Specialty Group = SUM('Waitlist'[Total])
 
-
-
-&nbsp;Dashboard Pages
-
+📄 Dashboard Pages
 1️⃣ Summary Dashboard
-
-
 <img width="1379" height="767" alt="Screenshot 2025-10-31 132027" src="https://github.com/user-attachments/assets/c2735f9f-ffd6-4ffc-b570-19e16e427351" />
+Includes:
 
-Latest Month Waitlist
+Latest vs PY Waitlist KPIs
 
+Case Type Split
 
-
-PY Latest Month Waitlist
-
-
-
-Waitlist Bifurcation by Case Type
-
-
-
-Age \& Time Band Waitlist Comparison
-
-
+Age & Time Band Distribution
 
 Specialty-wise Avg/Median Waitlist
 
-
-
-Multi-year Monthly Trend for IP/DC vs OP
-
-
+Multi-year Trend (IP/DC vs OP)
 
 2️⃣ Detailed View
-
 <img width="1366" height="757" alt="Screenshot 2025-10-31 132059" src="https://github.com/user-attachments/assets/609df4b4-d9cb-4a7e-aa13-66b5a040c624" />
 
+Hierarchical Drill-Down:
 
-A hierarchical drill-down matrix:
+Archive_Date
 
+Specialty_Name
 
+Age_Profile
 
-Archive\_Date  
+Time_Bands
 
-&nbsp;  └── Specialty\_Name  
+Columns:
 
-&nbsp;        └── Age\_Profile  
-
-&nbsp;              └── Time\_Bands  
-
-
-
-
-
-Columns include: Day Case | Inpatient | Outpatient | Total
-
-
+Day Case | Inpatient | Outpatient | Total
 
 Fully filterable by:
 
-&nbsp;Case\_Type
-
-&nbsp;Specialty\_Name
-
-&nbsp;Age\_Profile
-
-&nbsp;Time\_Bands
-
-&nbsp;Date Range
-3️⃣Drill Down
-<img width="489" height="789" alt="Screenshot 2025-10-31 132124" src="https://github.com/user-attachments/assets/00bfe780-00b5-489a-a75d-b8424187be3e" />
-
-
-*Specialty Group Analysis*
-
-
-
-Total Waitlist by Specialty Group
-
-
-
-Ranked bar chart (Bones, General, ENT, Eyes, Skin, etc.)
-
-
-
-Highlights highest-pressure clinical areas
-
-
-
-&nbsp;Insights Highlight
-
-
-
-Outpatient demand is the largest contributor to total waitlist.
-
-
-
-Significant backlog growth visible in 2020–2021.
-
-
-
-Specialty groups like Bones, General, ENT, Eyes show highest totals.
-
-
-
-Time band 18+ Months indicates long-term pressure areas.
-
-
-
-Day Case remains stable compared to rising Outpatient backlog.
-
-
-
-&nbsp;Tools \& Technologies
-
-
-
-Power BI Desktop
-
-
-
-DAX
-
-
-
-Power Query (M Language)
-
-
-
-CSV structured data
-
-
-
-&nbsp;How to Use
-
-
-
-Clone or download this repository.
-
-
-
-Open the .pbix file using Power BI Desktop.
-
-
-
-Interact using slicers for:
-
-
-
 Case Type
-
-
 
 Specialty
 
-
-
 Age Profile
-
-
 
 Time Band
 
+Date Range
 
+3️⃣ Drill-Down Page
+<img width="489" height="789" alt="Screenshot 2025-10-31 132124" src="https://github.com/user-attachments/assets/00bfe780-00b5-489a-a75d-b8424187be3e" />
+
+Specialty Group Analysis
+
+Total Waitlist by Specialty Group
+
+Ranked bar chart (Bones, General, ENT, Eyes, etc.)
+
+Highlights highest-pressure specialties
+
+🔍 Insights Highlight
+
+Outpatient demand is the largest contributor to total waitlist.
+
+Backlog rose significantly during 2020–2021.
+
+Specialty groups like Bones, General, ENT, Eyes show highest totals.
+
+18+ Month Time Band reveals long-term backlog pressure.
+
+Day Case remains stable compared to rising Outpatient demand.
+
+🛠 Tools & Technologies
+
+Power BI Desktop
+
+DAX
+
+Power Query (M)
+
+CSV data sources
+
+🚀 How to Use
+
+Clone or download the repository.
+
+Open the .pbix file in Power BI Desktop.
+
+Use slicers to interact with:
+
+Case Type
+
+Specialty
+
+Age Profile
+
+Time Band
 
 Date Range
 
+Explore all pages for insights.
 
+📈 Future Enhancements
 
-Explore all pages for detailed insights.
+Predictive waitlist forecasting (ML)
 
-
-
-&nbsp;Future Enhancements
-
-
-
-Predictive waitlist forecasting using ML
-
-
-
-Benchmarking across multiple hospitals
-
-
+Multi-hospital benchmarking
 
 Risk scoring for long-wait patients
 
-
-
 Real-time waitlist updates via API
-
-
 
 ⭐ Support
 
-
-
-If you like this dashboard, please ⭐ star the repository to support the project!
-
+If you found this dashboard useful, please ⭐ star the repository!
 
 
 
