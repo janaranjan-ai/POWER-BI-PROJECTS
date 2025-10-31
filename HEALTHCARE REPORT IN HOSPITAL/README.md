@@ -40,7 +40,7 @@ The dashboard is built using the following key fields:
 
 
 
-Column Name	Description
+**Column Name	Description**
 
 Archive\_Date	Snapshot date of the waitlist record
 
@@ -138,7 +138,7 @@ SUM('Waitlist'\[Total])
 
 1️⃣ Summary Dashboard
 
-
+![SUMMARY](images/Screenshot 2025-10-31 132027.png)
 
 Latest Month Waitlist
 
@@ -327,4 +327,5 @@ Real-time waitlist updates via API
 
 
 If you like this dashboard, please ⭐ star the repository to support the project!
+
 
