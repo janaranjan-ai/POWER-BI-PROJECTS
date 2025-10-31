@@ -167,6 +167,7 @@ Multi-year Monthly Trend for IP/DC vs OP
 
 2️⃣ Detailed View
 
+<img width="1366" height="757" alt="Screenshot 2025-10-31 132059" src="https://github.com/user-attachments/assets/609df4b4-d9cb-4a7e-aa13-66b5a040c624" />
 
 
 A hierarchical drill-down matrix:
@@ -200,10 +201,11 @@ Fully filterable by:
 &nbsp;Time\_Bands
 
 &nbsp;Date Range
+3️⃣Drill Down
+<img width="489" height="789" alt="Screenshot 2025-10-31 132124" src="https://github.com/user-attachments/assets/00bfe780-00b5-489a-a75d-b8424187be3e" />
 
 
-
-3️⃣ Specialty Group Analysis
+*Specialty Group Analysis*
 
 
 
@@ -328,6 +330,7 @@ Real-time waitlist updates via API
 
 
 If you like this dashboard, please ⭐ star the repository to support the project!
+
 
 
 
