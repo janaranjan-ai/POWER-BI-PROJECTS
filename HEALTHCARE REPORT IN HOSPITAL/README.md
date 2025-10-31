@@ -138,7 +138,8 @@ SUM('Waitlist'\[Total])
 
 1️⃣ Summary Dashboard
 
-![SUMMARY](images/Screenshot 2025-10-31 132027.png)
+
+<img width="1379" height="767" alt="Screenshot 2025-10-31 132027" src="https://github.com/user-attachments/assets/c2735f9f-ffd6-4ffc-b570-19e16e427351" />
 
 Latest Month Waitlist
 
@@ -327,5 +328,6 @@ Real-time waitlist updates via API
 
 
 If you like this dashboard, please ⭐ star the repository to support the project!
+
 
 
